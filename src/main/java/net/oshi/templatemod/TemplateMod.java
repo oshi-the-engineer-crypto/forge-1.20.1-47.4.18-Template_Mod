@@ -41,6 +41,7 @@ public class TemplateMod {
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModItems.OAK_LOG);
             event.accept(ModItems.BIRCH_LOG);
+            event.accept(ModItems.SPRUCE_LOG);
         }
     }
 
