@@ -17,6 +17,10 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SPRUCE_LOG = ITEMS.register("spruce_log",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ACACIA_LOG = ITEMS.register("acacia_log",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MANGROVE_LOG = ITEMS.register("mangrove_log",
+            () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

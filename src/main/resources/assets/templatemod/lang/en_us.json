@@ -1,5 +1,7 @@
 {
   "item.templatemod.oak_log": "Oak Log",
   "item.templatemod.birch_log": "Birch Log",
-  "item.templatemod.spruce_log": "Spruce Log"
+  "item.templatemod.spruce_log": "Spruce Log",
+  "item.templatemod.acacia_log": "Acacia Log",
+  "item.templatemod.mangrove_log": "Mangrove Log"
 }

@@ -42,6 +42,8 @@ public class TemplateMod {
             event.accept(ModItems.OAK_LOG);
             event.accept(ModItems.BIRCH_LOG);
             event.accept(ModItems.SPRUCE_LOG);
+            event.accept(ModItems.ACACIA_LOG);
+            event.accept(ModItems.MANGROVE_LOG);
         }
     }
 
