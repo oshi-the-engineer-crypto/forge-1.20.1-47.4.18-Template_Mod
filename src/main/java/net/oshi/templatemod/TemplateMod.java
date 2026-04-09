@@ -44,6 +44,7 @@ public class TemplateMod {
             event.accept(ModItems.SPRUCE_LOG);
             event.accept(ModItems.ACACIA_LOG);
             event.accept(ModItems.MANGROVE_LOG);
+            event.accept(ModItems.JUNGLE_LOG);
         }
     }
 

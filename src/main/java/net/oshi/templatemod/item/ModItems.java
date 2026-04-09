@@ -21,6 +21,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MANGROVE_LOG = ITEMS.register("mangrove_log",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> JUNGLE_LOG = ITEMS.register("jungle_log",
+            () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
