@@ -40,6 +40,7 @@ public class TemplateMod {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModItems.OAK_LOG);
+            event.accept(ModItems.DARK_OAK_LOG);
             event.accept(ModItems.BIRCH_LOG);
             event.accept(ModItems.SPRUCE_LOG);
             event.accept(ModItems.ACACIA_LOG);
