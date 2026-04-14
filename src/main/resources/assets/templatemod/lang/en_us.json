@@ -6,5 +6,6 @@
   "item.templatemod.acacia_log": "Acacia Log",
   "item.templatemod.mangrove_log": "Mangrove Log",
   "item.templatemod.jungle_log": "Jungle Log",
-  "item.templatemod.cherry_log": "Cherry Log"
+
+  "creativetab.template_tab": "Natural Template Blocks"
 }

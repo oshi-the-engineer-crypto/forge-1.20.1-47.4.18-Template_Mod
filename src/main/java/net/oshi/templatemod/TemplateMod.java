@@ -13,6 +13,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.oshi.templatemod.item.ModCreativeModeTabs;
 import net.oshi.templatemod.item.ModItems;
 import org.slf4j.Logger;
 
@@ -24,6 +25,8 @@ public class TemplateMod {
 
     public TemplateMod(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
+
+        ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
 
@@ -46,7 +49,6 @@ public class TemplateMod {
             event.accept(ModItems.ACACIA_LOG);
             event.accept(ModItems.MANGROVE_LOG);
             event.accept(ModItems.JUNGLE_LOG);
-            event.accept(ModItems.CHERRY_LOG);
         }
     }
 
