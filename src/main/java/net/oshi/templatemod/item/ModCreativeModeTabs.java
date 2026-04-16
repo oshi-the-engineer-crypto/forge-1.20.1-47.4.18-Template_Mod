@@ -19,12 +19,12 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.template_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.OAK_LOG.get());
+                        output.accept(ModItems.DARK_OAK_LOG.get());
                         output.accept(ModItems.BIRCH_LOG.get());
                         output.accept(ModItems.SPRUCE_LOG.get());
                         output.accept(ModItems.ACACIA_LOG.get());
                         output.accept(ModItems.JUNGLE_LOG.get());
                         output.accept(ModItems.MANGROVE_LOG.get());
-                        output.accept(ModItems.DARK_OAK_LOG.get());
 
 
                     })
