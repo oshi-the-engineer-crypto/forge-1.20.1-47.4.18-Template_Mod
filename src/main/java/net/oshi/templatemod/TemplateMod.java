@@ -30,6 +30,7 @@ public class TemplateMod {
         ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+
         ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
