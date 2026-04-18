@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "templatemod:block/oak_log_top",
+    "down": "templatemod:block/oak_log_bottom",
+    "north": "templatemod:block/oak_log_front",
+    "south": "templatemod:block/oak_log_back",
+    "east": "templatemod:block/oak_log_right",
+    "west": "templatemod:block/oak_log_left"
+  }
+}

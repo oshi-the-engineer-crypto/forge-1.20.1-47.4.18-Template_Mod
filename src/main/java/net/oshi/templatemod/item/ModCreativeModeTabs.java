@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.oshi.templatemod.TemplateMod;
+import net.oshi.templatemod.block.ModBlocks;
 
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
@@ -26,6 +27,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.JUNGLE_LOG.get());
                         output.accept(ModItems.MANGROVE_LOG.get());
 
+                        output.accept(ModBlocks.OAK_TRUNK.get());
+                        output.accept(ModBlocks.OAK_LOG.get());
 
                     })
                     .build());
