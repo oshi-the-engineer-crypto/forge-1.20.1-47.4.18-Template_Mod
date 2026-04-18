@@ -28,7 +28,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MANGROVE_LOG.get());
 
                         output.accept(ModBlocks.OAK_TRUNK.get());
-                        output.accept(ModBlocks.OAK_LOG.get());
 
                     })
                     .build());

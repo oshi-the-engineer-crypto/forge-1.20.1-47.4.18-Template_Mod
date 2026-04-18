@@ -1,14 +1,16 @@
 package net.oshi.templatemod.block;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
-import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,28 +23,24 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, TemplateMod.MOD_ID);
 
+    public static class OakTrunkBlock extends Block {
+        // Defines the thin pillar hitbox (4 pixels in from each side)
+        private static final VoxelShape SHAPE = Block.box(4, 0, 4, 12, 16, 12);
+
+        public OakTrunkBlock(BlockBehaviour.Properties properties) {
+            super(properties.noOcclusion());
+        }
+
+        @Override
+        public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+            return SHAPE;
+        }
+    }
+
     public static final RegistryObject<Block> OAK_TRUNK = registerBlock("oak_trunk",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)
-                    .ignitedByLava()
+            () -> new OakTrunkBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
                     .strength(2.0F, 3.0F)
                     .sound(SoundType.WOOD)));
-
-    public static final DeferredRegister<Block> VANILLA_BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, "minecraft");
-
-    public static final RegistryObject<Block> OAK_LOG = VANILLA_BLOCKS.register("oak_log",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.WOOD)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(2.0F, 3.0F)
-                    .sound(SoundType.WOOD)
-                    .ignitedByLava()));
-
-    public static final DeferredRegister<Item> VANILLA_ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, "minecraft");
-
-    public static final RegistryObject<Item> OAK_LOG_ITEM = VANILLA_ITEMS.register("oak_log",
-            () -> new BlockItem(OAK_LOG.get(), new Item.Properties()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -56,7 +54,5 @@ public class ModBlocks {
 
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);
-        VANILLA_BLOCKS.register(eventBus);
-        VANILLA_ITEMS.register(eventBus);
     }
 }
