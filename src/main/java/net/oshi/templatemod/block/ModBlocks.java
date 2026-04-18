@@ -1,16 +1,11 @@
 package net.oshi.templatemod.block;
 
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -23,22 +18,8 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, TemplateMod.MOD_ID);
 
-    public static class OakTrunkBlock extends Block {
-        // Defines the thin pillar hitbox (4 pixels in from each side)
-        private static final VoxelShape SHAPE = Block.box(4, 0, 4, 12, 16, 12);
-
-        public OakTrunkBlock(BlockBehaviour.Properties properties) {
-            super(properties.noOcclusion());
-        }
-
-        @Override
-        public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-            return SHAPE;
-        }
-    }
-
     public static final RegistryObject<Block> OAK_TRUNK = registerBlock("oak_trunk",
-            () -> new OakTrunkBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
                     .strength(2.0F, 3.0F)
                     .sound(SoundType.WOOD)));
 
