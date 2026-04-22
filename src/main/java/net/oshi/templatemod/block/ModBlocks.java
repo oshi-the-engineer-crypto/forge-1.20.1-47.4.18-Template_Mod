@@ -5,7 +5,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -19,9 +22,13 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, TemplateMod.MOD_ID);
 
     public static final RegistryObject<Block> OAK_TRUNK = registerBlock("oak_trunk",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
-                    .strength(2.0F, 3.0F)
-                    .sound(SoundType.WOOD)));
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)
+                    .sound(SoundType.WOOD)
+                    .ignitedByLava()
+                    .mapColor(MapColor.WOOD)
+                    .strength(2,1)
+                    .pushReaction(PushReaction.DESTROY)));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -29,11 +36,11 @@ public class ModBlocks {
         return toReturn;
     }
 
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
+    private static <T extends Block>RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
-    public static void register(IEventBus eventBus){
+    public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
 }

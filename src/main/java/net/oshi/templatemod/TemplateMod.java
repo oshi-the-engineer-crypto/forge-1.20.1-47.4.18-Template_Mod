@@ -9,7 +9,6 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -29,9 +28,8 @@ public class TemplateMod {
 
         ModCreativeModeTabs.register(modEventBus);
 
-        ModBlocks.register(modEventBus);
-
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -44,13 +42,6 @@ public class TemplateMod {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
-            event.accept(ModItems.OAK_LOG);
-            event.accept(ModItems.DARK_OAK_LOG);
-            event.accept(ModItems.BIRCH_LOG);
-            event.accept(ModItems.SPRUCE_LOG);
-            event.accept(ModItems.ACACIA_LOG);
-            event.accept(ModItems.MANGROVE_LOG);
-            event.accept(ModItems.JUNGLE_LOG);
         }
     }
 
