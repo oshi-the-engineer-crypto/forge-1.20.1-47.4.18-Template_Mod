@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " @ ",
+    "###",
+    "   "
+  ],
+  "key": {
+    "#": {
+      "item": "templatemod:oak_log"
+    },
+    "@": {
+      "item": "minecraft:flint"
+    }
+  },
+  "result": {
+    "item": "templatemod:oak_plank",
+    "count": 24
+  }
+}

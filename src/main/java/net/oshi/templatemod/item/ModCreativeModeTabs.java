@@ -18,8 +18,9 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.OAK_LOG.get()))
                     .title(Component.translatable("creativetab.template_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.OAK_LOG.get());
                         output.accept(ModBlocks.OAK_TRUNK.get());
+                        output.accept(ModItems.OAK_LOG.get());
+                        output.accept(ModItems.OAK_PLANK.get());
 
                         output.accept(ModItems.DARK_OAK_LOG.get());
 

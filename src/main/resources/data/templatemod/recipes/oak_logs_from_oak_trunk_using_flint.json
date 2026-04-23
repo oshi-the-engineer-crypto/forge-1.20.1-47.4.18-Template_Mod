@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {"item": "templatemod:oak_trunk"},
+    {"item": "minecraft:flint"}
+  ],
+  "result": {
+    "item": "templatemod:oak_log",
+    "count": 3
+  }
+}

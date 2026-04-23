@@ -13,6 +13,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> OAK_LOG = ITEMS.register("oak_log",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> OAK_PLANK = ITEMS.register("oak_plank",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DARK_OAK_LOG = ITEMS.register("dark_oak_log",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BIRCH_LOG = ITEMS.register("birch_log",
