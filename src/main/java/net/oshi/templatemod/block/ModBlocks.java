@@ -22,7 +22,7 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, TemplateMod.MOD_ID);
 
     public static final RegistryObject<Block> OAK_TRUNK = registerBlock("oak_trunk",
-            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)
+            () -> new WallBlock( BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)
                     .sound(SoundType.WOOD)
                     .ignitedByLava()
                     .mapColor(MapColor.WOOD)
