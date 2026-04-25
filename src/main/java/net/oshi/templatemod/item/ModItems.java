@@ -1,5 +1,6 @@
 package net.oshi.templatemod.item;
 
+import ca.weblite.objc.Proxy;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -31,7 +32,7 @@ public class ModItems {
     public static final RegistryObject<Item> SHARP_FLINT = ITEMS.register("sharp_flint",
             () -> new SharpFlintItem(new Item.Properties().durability(20)));
 
-        public static void register(IEventBus eventBus) {
+    public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
 }

@@ -1,0 +1,24 @@
+{
+  "multipart": [
+    {
+      "apply": { "model": "templatemod:block/oak_trunk" },
+      "when": { "up": "true" }
+    },
+    {
+      "when": { "OR": [ { "north": "low" }, { "north": "tall" } ] },
+      "apply": { "model": "templatemodt:block/oak_trunk" }
+    },
+    {
+      "when": { "OR": [ { "east": "low" }, { "east": "tall" } ] },
+      "apply": { "model": "templatemod:block/oak_trunk" }
+    },
+    {
+      "when": { "OR": [ { "south": "low" }, { "south": "tall" } ] },
+      "apply": { "model": "templatemod:block/oak_trunk" }
+    },
+    {
+      "when": { "OR": [ { "west": "low" }, { "west": "tall" } ] },
+      "apply": { "model": "templatemod:block/oak_trunk" }
+    }
+  ]
+}

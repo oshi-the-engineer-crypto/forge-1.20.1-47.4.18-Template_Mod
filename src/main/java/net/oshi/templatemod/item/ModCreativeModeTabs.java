@@ -42,7 +42,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.template_tab_2"))
                     .displayItems((itemDisplayParameters, output) -> {
 
-                        output.accept(ModItems.WATERSKIN.get());
+                        output.accept(ModItems.SHARP_FLINT.get());
 
                     })
                     .build());
