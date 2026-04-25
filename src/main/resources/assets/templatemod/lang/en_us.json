@@ -8,7 +8,10 @@
   "item.templatemod.mangrove_log": "Mangrove Log",
   "item.templatemod.jungle_log": "Jungle Log",
 
+  "item.templatemod.waterskin": "Waterskin",
+
   "block.templatemod.oak_trunk": "Oak Trunk",
 
-  "creativetab.template_tab": "Natural Template Blocks"
+  "creativetab.template_tab_1": "Natural Template Blocks",
+  "creativetab.template_tab_2": "Template Utilities"
 }

@@ -6,6 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.oshi.templatemod.TemplateMod;
+import net.oshi.templatemod.item.custom.SharpFlintItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -27,7 +28,10 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> JUNGLE_LOG = ITEMS.register("jungle_log",
             () -> new Item(new Item.Properties()));
-    public static void register(IEventBus eventBus) {
+    public static final RegistryObject<Item> SHARP_FLINT = ITEMS.register("sharp_flint",
+            () -> new SharpFlintItem(new Item.Properties().durability(20)));
+
+        public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
 }

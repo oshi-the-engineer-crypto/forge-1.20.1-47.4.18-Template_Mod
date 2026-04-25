@@ -17,5 +17,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "templatemod:blocks/oak_trunk"
+  "random_sequence": "templatemod:block/oak_trunk"
 }

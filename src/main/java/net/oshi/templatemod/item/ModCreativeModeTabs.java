@@ -14,10 +14,11 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TemplateMod.MOD_ID);
 
-    public static final RegistryObject<CreativeModeTab> TEMPLATE_TAB = CREATIVE_MODE_TABS.register("template_tab",
+    public static final RegistryObject<CreativeModeTab> TEMPLATE_TAB_1 = CREATIVE_MODE_TABS.register("template_tab_1",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.OAK_LOG.get()))
-                    .title(Component.translatable("creativetab.template_tab"))
+                    .title(Component.translatable("creativetab.template_tab_1"))
                     .displayItems((itemDisplayParameters, output) -> {
+
                         output.accept(ModBlocks.OAK_TRUNK.get());
                         output.accept(ModItems.OAK_LOG.get());
                         output.accept(ModItems.OAK_PLANK.get());
@@ -36,6 +37,15 @@ public class ModCreativeModeTabs {
                     })
                     .build());
 
+    public static final RegistryObject<CreativeModeTab> TEMPLATE_TAB_2 = CREATIVE_MODE_TABS.register("template_tab_2",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.OAK_LOG.get()))
+                    .title(Component.translatable("creativetab.template_tab_2"))
+                    .displayItems((itemDisplayParameters, output) -> {
+
+                        output.accept(ModItems.WATERSKIN.get());
+
+                    })
+                    .build());
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
